@@ -4,15 +4,14 @@ import css from './ContactList.module.css'
 export const ContactList = ({contacts, onDeleteContact}) => {
         return (
     <ul className={css.list}>
-        {contacts.map((contact) => 
+        {contacts && contacts.map((contact) => 
         {
             return <ContactItem key={contact.id} id={contact.id} name={contact.name} number={contact.number} onDelete={onDeleteContact}/>
         }
         )}
-        
     </ul>
 )
-     
+    
 }
 ContactList.propTypes = {
     onDeleteContact: PropTypes.func.isRequired,

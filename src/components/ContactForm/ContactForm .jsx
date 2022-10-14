@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import css from './ContactForm.module.css'
-export  const ContactForm =({onSubmit, onChange})=>{    
+export  const ContactForm =({onSubmit})=>{    
     return (
         <form onSubmit={onSubmit} className={css.form}>
             <label className={css.label}>Name</label>
@@ -12,7 +12,6 @@ export  const ContactForm =({onSubmit, onChange})=>{
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
             placeholder="Enter name"
-            onChange={onChange}
             />
             <label>Phone number</label>
             <input
@@ -23,7 +22,6 @@ export  const ContactForm =({onSubmit, onChange})=>{
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
             placeholder="Enter phone number"
-            onChange={onChange}
             />
             <button className={ css.button} type="submit"> Add contact</button>
 
@@ -33,5 +31,4 @@ export  const ContactForm =({onSubmit, onChange})=>{
 }
 ContactForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
-    onChange: PropTypes.func.isRequired,
 }
